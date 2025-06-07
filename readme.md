@@ -2,7 +2,7 @@
 
 LED lamps powered by NodeMCU & Neopixels.
 
-# Getting started, testing hardward
+# Getting started, testing hardware
 See [hardware](./hardware.md) and [hardware tests](./hardware_tests/) to get
 started.
 
