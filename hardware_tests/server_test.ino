@@ -45,6 +45,14 @@ void ledOff() {
     digitalWrite(LED_PIN, HIGH);
 }
 
+bool isLedOn() {
+    return digitalRead(LED_PIN) == LOW;
+}
+
+bool isLedOff() {
+    return !isLedOn();
+}
+
 void setup()
 {
     pinMode(LED_PIN, OUTPUT);
@@ -95,7 +103,7 @@ void handleRequest(WiFiClient client) {
         ledOff();
     }
 
-    if (digitalRead(LED_PIN) == HIGH)
+    if (isLedOn())
     {
         html_2 = "<form id='F1' action='LEDOFF'>"
                  "<input class='button' type='submit' value='Turn off the LED' >"
@@ -114,8 +122,6 @@ void handleRequest(WiFiClient client) {
     client.print(html_1);
     client.print(html_2);
     client.print(html_4);
-
-    client.stop();
 }
 
 void loop()

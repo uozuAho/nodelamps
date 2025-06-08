@@ -67,3 +67,5 @@ ping nodelamp.local
 curl http://nodelamp.local/LEDON  # turn the onboard LED on
 curl http://nodelamp.local/LEDOFF # turn the onboard LED off
 ```
+- you can also open http://nodelamp.local in a browser and turn the LED on/off
+  from there
