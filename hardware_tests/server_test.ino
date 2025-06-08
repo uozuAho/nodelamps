@@ -35,7 +35,6 @@ String html_2 = "";
 String html_4 = "</div></body></html>";
 
 String request = "";
-bool mDnsOk = false;
 
 
 void ledOn() {
@@ -78,7 +77,6 @@ void setup()
     }
     else
     {
-        mDnsOk = true;
         Serial.println("mDNS responder started");
     }
 
@@ -122,19 +120,12 @@ void handleRequest(WiFiClient client) {
 
 void loop()
 {
+    MDNS.update();
     WiFiClient client = server.available();
 
     if (client) {
         handleRequest(client);
     }
 
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
-    if (mDnsOk) {
-        Serial.println("mDNS OK");
-    }
-    else {
-        Serial.println("mDNS not OK");
-    }
-    delay(1000);
+    delay(1);
 }

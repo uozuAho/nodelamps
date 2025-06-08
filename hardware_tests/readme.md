@@ -60,11 +60,10 @@ This isn't really a hardware test, but whatever.
     - your DNS name (you can leave it as nodelamp)
 - upload to nodemcu
 - check the serial monitor. You should see an IP address and 'mDNS OK'
-- **TODO** this doesn't work:
-    - `ping nodelamp.local`
-    - you should get a response from the nodemcu's IP
-    - workaround:
-        - look at the IP address printed in the serial monitor
-        - `ping <IP address>`
-        - turn the onboard led on: curl http://<ip address>/LEDON
-        - turn the onboard led off: curl http://<ip address>/LEDOFF
+- in a terminal, run:
+```sh
+# this should get a response and show the nodelamp's IP address
+ping nodelamp.local
+curl http://nodelamp.local/LEDON  # turn the onboard LED on
+curl http://nodelamp.local/LEDOFF # turn the onboard LED off
+```
