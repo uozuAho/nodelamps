@@ -51,3 +51,20 @@ void loop() {
 - run the arduino IDE serial monitor at 115200 baud
 - point a remote control at the IR module and press buttons
 - you should so info printed in the serial monitor
+
+# mDNS test
+This isn't really a hardware test, but whatever.
+
+- set in [server test](./server_test.ino):
+    - your SSID and password
+    - your DNS name (you can leave it as nodelamp)
+- upload to nodemcu
+- check the serial monitor. You should see an IP address and 'mDNS OK'
+- **TODO** this doesn't work:
+    - `ping nodelamp.local`
+    - you should get a response from the nodemcu's IP
+    - workaround:
+        - look at the IP address printed in the serial monitor
+        - `ping <IP address>`
+        - turn the onboard led on: curl http://<ip address>/LEDON
+        - turn the onboard led off: curl http://<ip address>/LEDOFF
