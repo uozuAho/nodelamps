@@ -8,8 +8,10 @@ started.
 
 # Run lamp
 - make the [hardware](./hardware.md)
+- configure values at the top of [lamp](./lamp.ino)
 - flash the hardware with [lamp](./lamp.ino)
 - use your TV remote to turn LED brightness up/down
+- use HTTP to set LED values, eg. `curl 'http://nodelamp.local/led?r=10&g=0&b=0'`
 
 # Configure your remote control
 - run [lamp](./lamp.ino) and look at the commands printed in the arduino serial
