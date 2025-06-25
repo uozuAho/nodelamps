@@ -1,5 +1,9 @@
 # Beetle c6 hardware tests
 
+Hardware:
+- [beetle c6](https://wiki.dfrobot.com/SKU_DFR1117_Beetle_ESP32_C6)
+- bought here: https://littlebirdelectronics.com.au/products/beetle-esp32-c6-mini-development-board-for-wireless-smart-wearable-device?_pos=2&_psq=beetle&_ss=e&_v=1.0
+
 # First connect + blink test
 - plug in the board
 - open the arduino IDE
