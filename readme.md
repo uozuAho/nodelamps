@@ -7,7 +7,7 @@ See [hardware](./hardware.md) and [hardware tests](./hardware_tests/) to get
 started.
 
 # Run lamp
-- make the [hardware](./hardware.md)
+- make hardware TODO: what's the final hardware version?
 - configure values at the top of [lamp](./lamp.ino)
 - flash the hardware with [lamp](./lamp.ino)
 - use your TV remote to turn LED brightness up/down
