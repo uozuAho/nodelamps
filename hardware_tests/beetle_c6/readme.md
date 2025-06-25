@@ -31,5 +31,17 @@ void loop() {
   during programming
 
 
+# WiFi - AP mode
+Flash [wifi ap](./wifi_ap.ino), then connect to the wifi network 'yummonet'
+with the password 12345678bobbob. Browse to 192.168.4.1 to turn the LED on/off.
+
+
+# Wifi - client mode
+I tried [wifi test](../nodemcu/wifi_test.ino), replacing `#include <ESP8266WiFi.h>`
+with `#include <WiFi.h>`. I couldn't get it to connect to my wifi.
+
+**todo** find a beetle/c6 specific wifi test
+
+
 # references
 - [beetle wiki](https://wiki.dfrobot.com/SKU_DFR1117_Beetle_ESP32_C6)
