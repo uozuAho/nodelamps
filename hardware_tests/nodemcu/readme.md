@@ -59,3 +59,16 @@ curl http://nodelamp.local/LEDOFF # turn the onboard LED off
 ```
 - you can also open http://nodelamp.local in a browser and turn the LED on/off
   from there
+
+# OTA updates
+- in the arduino IDE, goto tools -> manage libraries
+- install the arduinoOTA library
+- first flash needs to be via USB - plug in the board
+- set your SSID and password in [ota test 1](./ota_test_1.ino), then flash
+- there should now be a nodeMCU with a WiFi icon in the boards dropdown - select
+  that
+- set your SSID and password in [ota test 2](./ota_test_2.ino), copy to the IDE,
+  flash. This time the code will go via WiFi. If you have issues with `espota`,
+  turn on verbose compile + upload in file -> preferences -> settings. After
+  doing this, a second flash worked for me. I was going to copy the commands
+  printed in the Arduino IDE and tweak them manually
