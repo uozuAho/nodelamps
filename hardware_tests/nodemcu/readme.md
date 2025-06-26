@@ -59,3 +59,8 @@ curl http://nodelamp.local/LEDOFF # turn the onboard LED off
 ```
 - you can also open http://nodelamp.local in a browser and turn the LED on/off
   from there
+
+# OTA updates
+- in the arduino IDE, goto tools -> manage libraries
+- install the arduinoOTA library
+- 
