@@ -1,6 +1,6 @@
 # Hardware tests
 
-Wire up everything as per [hardware](../hardware.md).
+Wire up everything as per the [nodemcu hardware](./nodemcu_hardware.md).
 
 # Getting started (linux)
 - `sudo usermod -a -G dialout $YOUR_USER`
