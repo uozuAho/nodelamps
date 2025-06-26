@@ -14,21 +14,11 @@ Wire up everything as per the [nodemcu hardware](./nodemcu_hardware.md).
 
 # Hello world: Blink
 - Follow getting started
-- paste the code below into the arduino IDE, upload
+- paste the [blink](./blink.ino) into the arduino IDE, upload
 - You should see the on-board LED flashing at 0.5Hz
 
-```cpp
-void setup() {
-    pinMode(16, OUTPUT);
-}
-
-void loop() {
-    digitalWrite(16, HIGH);
-    delay(1000);
-    digitalWrite(16, LOW);
-    delay(1000);
-}
-```
+# Touch sensor
+- Similar to above, use touch sensor sketch
 
 # Wifi test
 - Set your SSID and password in [wifi_test](./wifi_test.ino)
