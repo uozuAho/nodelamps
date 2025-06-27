@@ -35,6 +35,14 @@ with the password 12345678bobbob. Browse to 192.168.4.1 to turn the LED on/off.
 Flash [wifi client](./wifi_client.ino), the open tools -> serial monitor. You
 should see messages indicating success/failure to connect to your network.
 
+# mDNS and OTA update test
+- enter your SSID and password into [ota_test](./ota_test.ino) and flash via USB
+- the onboard LED will flash quickly until WiFi connects, then flash at 0.5Hz
+- `ping beetle.local`. You should get a response
+- you should now see a new IP address option in the Arduino IDE board drop down
+- select the IP address, and re-select DFRobot FireBeetle 2 ESP32-C6
+- change the LED flash rate to say 0.25Hz (not too similar to the 'wifi
+  connecting' rate), then flash again
 
 # references
 - [beetle wiki](https://wiki.dfrobot.com/SKU_DFR1117_Beetle_ESP32_C6)
