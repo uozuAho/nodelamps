@@ -9,20 +9,20 @@ which pins are safe to use? unclear
 
 # wiring
 ```
-                 USB C
-                +-----+
-                |     |
-        +-----------------------+
-        |       Beetle C6       |
-        | [GND]           [BAT] |
- 3v3 <--| [3v3]           [GND] |--> GND
-        | [4]             [VIN] |--> neopixel power
-        | [5]              [17] |
-        | [23]             [16] |--> neopixel data
-        | [22]             [19] |--> IR module data
-        | [21]             [20] |--> touch sensor data
-        | [7]               [6] |
-        +-----------------------+
+                            USB C
+                            +-----+
+                            |     |
+                    +-----------------------+
+                    |       Beetle C6       |
+                    | [GND]           [BAT] |
+             3v3 <--| [3v3]           [GND] |--> GND
+                    | [4]             [VIN] |--> neopixel power
+                    | [5]              [17] |
+touch sensor data <-| [23]             [16] |--> neopixel data
+                    | [22]             [19] |--> IR module data
+                    | [21]             [20] |
+                    | [7]               [6] |
+                    +-----------------------+
 
 to neopixels (3 LED strip)
 GND            --->
@@ -37,7 +37,7 @@ GND            ---> pin 2
 to touch sensor
 GND            ---> GND
 3v3            ---> VCC
-20  --1kohm--  ---> OUT
+23  --1kohm--  ---> OUT
 ```
 
 

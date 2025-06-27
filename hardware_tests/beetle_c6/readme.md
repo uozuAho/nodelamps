@@ -24,6 +24,9 @@ Hardware:
 - wire as per [dev board wiring](./beetle_dev_board.md)
 - flash [neopixel test](./neopixel_test.ino)
 
+# Touch sensor test
+- [touch_sensor_test](./touch_sensor_test.ino)
+
 # WiFi - AP mode
 Flash [wifi ap](./wifi_ap.ino), then connect to the wifi network 'yummonet'
 with the password 12345678bobbob. Browse to 192.168.4.1 to turn the LED on/off.
