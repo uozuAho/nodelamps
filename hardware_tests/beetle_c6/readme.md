@@ -15,22 +15,7 @@ Hardware:
 - in tools -> board, select DFRobot FireBeetle 2 ESP32-C6
 - in tools, check the settings match step 10 in https://wiki.dfrobot.com/SKU_DFR1117_Beetle_ESP32_C6
     - I just had to change USB CDC on boot to 'enabled'
-- flash the following sketch:
-
-```cpp
-int led = 15;
-void setup() {
-  pinMode(led,OUTPUT);
-}
-
-void loop() {
-  digitalWrite(led,HIGH);
-  delay(500);
-  digitalWrite(led,LOW);
-  delay(500);
-}
-```
-
+- flash the [blink](./blink.ino) sketch:
 - The blue LED should flash at 1Hz. The green 'CHG' LED keeps flashing, even
   during programming
 
