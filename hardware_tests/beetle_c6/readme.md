@@ -1,6 +1,7 @@
 # Beetle c6 hardware tests
 
 Hardware:
+- [dev board wiring](./beetle_dev_board.md)
 - [beetle c6](https://wiki.dfrobot.com/SKU_DFR1117_Beetle_ESP32_C6)
 - bought here: https://littlebirdelectronics.com.au/products/beetle-esp32-c6-mini-development-board-for-wireless-smart-wearable-device?_pos=2&_psq=beetle&_ss=e&_v=1.0
 
@@ -19,11 +20,13 @@ Hardware:
 - The blue LED should flash at 1Hz. The green 'CHG' LED keeps flashing, even
   during programming
 
+# Neopixel test
+- wire as per [dev board wiring](./beetle_dev_board.md)
+- flash [neopixel test](./neopixel_test.ino)
 
 # WiFi - AP mode
 Flash [wifi ap](./wifi_ap.ino), then connect to the wifi network 'yummonet'
 with the password 12345678bobbob. Browse to 192.168.4.1 to turn the LED on/off.
-
 
 # Wifi - client mode
 I tried [wifi test](../nodemcu/wifi_test.ino), replacing `#include <ESP8266WiFi.h>`
