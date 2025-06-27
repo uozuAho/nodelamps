@@ -29,10 +29,8 @@ Flash [wifi ap](./wifi_ap.ino), then connect to the wifi network 'yummonet'
 with the password 12345678bobbob. Browse to 192.168.4.1 to turn the LED on/off.
 
 # Wifi - client mode
-I tried [wifi test](../nodemcu/wifi_test.ino), replacing `#include <ESP8266WiFi.h>`
-with `#include <WiFi.h>`. I couldn't get it to connect to my wifi.
-
-**todo** find a beetle/c6 specific wifi test
+Flash [wifi client](./wifi_client.ino), the open tools -> serial monitor. You
+should see messages indicating success/failure to connect to your network.
 
 
 # references
