@@ -43,6 +43,7 @@ should see messages indicating success/failure to connect to your network.
 - select the IP address, and re-select DFRobot FireBeetle 2 ESP32-C6
 - change the LED flash rate to say 0.25Hz (not too similar to the 'wifi
   connecting' rate), then flash again
+    - if/when prompted for password, enter any value
 
 # references
 - [beetle wiki](https://wiki.dfrobot.com/SKU_DFR1117_Beetle_ESP32_C6)
