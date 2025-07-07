@@ -20,8 +20,13 @@ const char* MDNS_NAME   = "wozmon";
 const uint  ONBOARD_LED_PIN = 15;
 const uint  TOUCH_SENSOR_PIN = 23;
 const uint  NEOPX_PIN = 16;
-const uint  NEOPX_NUM_PIXELS = 3;
-const uint  NEOPX_MAX_BRIGHTNESS = 30;
+const uint  NEOPX_NUM_PIXELS = 66;
+const uint  NEOPX_MAX_BRIGHTNESS = 180;
+// 46cm * 9A/m = 4.14A max
+// 13 LEDS per 9cm (144.4 per meter)
+// 66LEDs @ 60mA max each = max 3.98 A
+// my supply is 5V 3A
+// assuming current is linear with brightness, max brightness = 3/4 * 255 = 191
 
 // -----------------------------------------------------------
 // mem
@@ -100,8 +105,8 @@ void handleHttpRequest() {
 void neoPxUpdate() {
     for (int pixel = 0; pixel < NEOPX_NUM_PIXELS; pixel++) {
         NeoPixel.setPixelColor(pixel, NeoPixel.Color(neoPx_r, neoPx_g, neoPx_b));
-        NeoPixel.show();
     }
+    NeoPixel.show();
 }
 
 void handleTouchSensor() {
