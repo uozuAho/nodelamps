@@ -21,12 +21,16 @@ const uint  ONBOARD_LED_PIN = 15;
 const uint  TOUCH_SENSOR_PIN = 23;
 const uint  NEOPX_PIN = 16;
 const uint  NEOPX_NUM_PIXELS = 66;
-const uint  NEOPX_MAX_BRIGHTNESS = 180;
+const uint  NEOPX_MAX_BRIGHTNESS = 255;
 // 46cm * 9A/m = 4.14A max
 // 13 LEDS per 9cm (144.4 per meter)
 // 66LEDs @ 60mA max each = max 3.98 A
 // my supply is 5V 3A
 // assuming current is linear with brightness, max brightness = 3/4 * 255 = 191
+// RGB all 220 draws ~15W total
+// R=255, GB=0: 6.5W
+// G=255, RB=0: 6.5W
+// B=255, RG=0: 6.3W
 
 // -----------------------------------------------------------
 // mem
@@ -35,6 +39,16 @@ Adafruit_NeoPixel NeoPixel(NEOPX_NUM_PIXELS, NEOPX_PIN, NEO_GRB + NEO_KHZ800);
 int neoPx_r = 0;
 int neoPx_g = 0;
 int neoPx_b = 0;
+// warm white, various brightness
+const int COLOR_PRESETS[][3] = {
+    {0, 0, 0},
+    {64, 36, 10},
+    {128, 73, 20},
+    {192, 109, 30},
+    {255, 147, 41}
+};
+int neoPx_presetIdx = 0;
+const int NUM_COLOR_PRESETS = sizeof(COLOR_PRESETS) / sizeof(COLOR_PRESETS[0]);
 int prevTouchSensorVal = 0;
 String httpRequest = "";
 
@@ -63,6 +77,17 @@ void setAllNeoPixels(int r, int g, int b) {
     neoPx_r = clampNeoPxVal(r);
     neoPx_g = clampNeoPxVal(g);
     neoPx_b = clampNeoPxVal(b);
+}
+
+void setNeoPixelsToPreset(int preset) {
+    if (preset < 0 || preset >= NUM_COLOR_PRESETS)
+        return;
+
+    int r = COLOR_PRESETS[preset][0];
+    int g = COLOR_PRESETS[preset][1];
+    int b = COLOR_PRESETS[preset][2];
+
+    setAllNeoPixels(r, g, b);
 }
 
 // parse r,g,b from a request like $host/led?r=10&g=20&b=30
@@ -112,12 +137,8 @@ void neoPxUpdate() {
 void handleTouchSensor() {
     int val = digitalRead(TOUCH_SENSOR_PIN);
     if (val == 1 && prevTouchSensorVal == 0) {
-        // todo: more light settings
-        if (neoPx_b > 0) {
-            setAllNeoPixels(0, 0, 0);
-        } else {
-            setAllNeoPixels(20, 20, 10);
-        }
+        neoPx_presetIdx = ++neoPx_presetIdx % NUM_COLOR_PRESETS;
+        setNeoPixelsToPreset(neoPx_presetIdx);
     }
     prevTouchSensorVal = val;
 }
